@@ -12,6 +12,8 @@ namespace Task_Management_System
 {
     public partial class Home : Form
     {
+        int listXPosition = 5;
+        int listBoxMargin = 5;
         public Home()
         {
             InitializeComponent();
@@ -30,5 +32,13 @@ namespace Task_Management_System
                 BoardArea.TabPages.Remove(BoardArea.SelectedTab);
             }
         }
+
+        private void AddList_Click(object sender, EventArgs e)
+        {
+            List list = new List(ListArea);
+            list.AddList(listXPosition);
+            listXPosition += list.boxWidth + listBoxMargin;
+        }
+
     }
 }
