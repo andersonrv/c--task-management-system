@@ -12,8 +12,8 @@ namespace Task_Management_System
 {
     public partial class Home : Form
     {
-        int listXPosition = 5;
-        int listBoxMargin = 5;
+        Random rgb = new Random();
+
         public Home()
         {
             InitializeComponent();
@@ -35,9 +35,10 @@ namespace Task_Management_System
 
         private void AddList_Click(object sender, EventArgs e)
         {
-            List list = new List(ListArea);
-            list.AddList(listXPosition);
-            listXPosition += list.boxWidth + listBoxMargin;
+            List list = new List();
+            list.BackColor = Color.FromArgb(rgb.Next(100, 200), rgb.Next(100, 200), rgb.Next(100, 200));
+
+            ListArea.Controls.Add(list);
         }
 
     }
