@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace Task_Management_System
 {
+
+
     public partial class Home : Form
     {
-        Random rgb = new Random();
+        FlowLayoutPanel ListSpace = new FlowLayoutPanel();
 
         public Home()
         {
@@ -21,7 +23,7 @@ namespace Task_Management_System
 
         private void AddBoard_Click(object sender, EventArgs e)
         {
-            TabPage aBoard = new TabPage("Board " + (BoardArea.TabPages.Count + 1));
+            Board aBoard = new Board("New Board"); // We need to make this field editable once a board is created
             BoardArea.TabPages.Add(aBoard);
         }
 
@@ -33,13 +35,6 @@ namespace Task_Management_System
             }
         }
 
-        private void AddList_Click(object sender, EventArgs e)
-        {
-            List list = new List();
-            list.BackColor = Color.FromArgb(rgb.Next(100, 200), rgb.Next(100, 200), rgb.Next(100, 200));
-
-            ListArea.Controls.Add(list);
-        }
 
     }
 }

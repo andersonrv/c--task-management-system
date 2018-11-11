@@ -22,8 +22,6 @@ namespace Task_Management_System
         bool taskAutoSize = true;
 
 
-
-
         public List()
         {
             InitializeComponent();
@@ -45,6 +43,10 @@ namespace Task_Management_System
             {
                 taskPanel.Controls.Add(taskLabel);
                 taskInputBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Please enter a title for the task.");
             }    
             
         }
@@ -53,7 +55,6 @@ namespace Task_Management_System
         {
             Task task = new Task(taskName);
             task.ShowDialog();
-
         }
 
         

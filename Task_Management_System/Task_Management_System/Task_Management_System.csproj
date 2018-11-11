@@ -45,6 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BoardContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoardContent.Designer.cs">
+      <DependentUpon>BoardContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +80,9 @@
     <Compile Include="Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BoardContent.resx">
+      <DependentUpon>BoardContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
