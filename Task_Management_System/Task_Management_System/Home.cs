@@ -1,25 +1,31 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Task_Management_System
 {
     public partial class Home : Form
     {
         FlowLayoutPanel ListSpace = new FlowLayoutPanel();
-        protected string connectString = "Data Source=199.103.60.77;Initial Catalog=aresendeviana683;Persist Security Info=True;User ID=aresendeviana683;Password=4577695275537560";
         protected int userId;
 
         public Home(int loggedUser)
         {
             InitializeComponent();
             userId = loggedUser;
+            var boards = LinqToSQLCRUD.ReadBoards(userId);
+            foreach (var board in boards)
+            {
+                TBoard tab = new TBoard(board.BoardId, board.BoardName, board.BoardId);
+                BoardArea.TabPages.Add(tab);
+            }
         }
 
         private void AddBoard_Click(object sender, EventArgs e)
@@ -30,14 +36,15 @@ namespace Task_Management_System
             }
             else
             {
-                Board aBoard = new Board("New Board"); // We need to make this field editable once a board is created
+                //int generateBoardId = (int)(Int64)DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
-                LinqToSQLCRUD.CreateBoard(BoardNameTextBox.Text, userId, connectString);
+
+                TBoard aBoard = new TBoard(BoardNameTextBox.Text, userId); // We need to make this field editable once a board is created
+
+                LinqToSQLCRUD.CreateBoard(BoardNameTextBox.Text, userId);
             
                 BoardArea.TabPages.Add(aBoard);
             }
-
-
         }
 
         private void DeleteBoard_Click(object sender, EventArgs e)

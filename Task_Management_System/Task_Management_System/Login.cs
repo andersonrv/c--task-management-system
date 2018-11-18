@@ -12,10 +12,7 @@ namespace Task_Management_System
 {
     public partial class Login : Form
     {
-        protected string connectString = "Data Source=199.103.60.77;Initial Catalog=aresendeviana683;Persist Security Info=True;User ID=aresendeviana683;Password=4577695275537560";
         int loggedUserId;
-
-
         public Login()
         {
             InitializeComponent();
@@ -25,7 +22,7 @@ namespace Task_Management_System
         {
             if (UserNameTextBox.Text != "" && PasswordTextBox.Text != "")
             {
-                loggedUserId = LinqToSQLCRUD.LoginUser(UserNameTextBox.Text, PasswordTextBox.Text, connectString);
+                loggedUserId = LinqToSQLCRUD.LoginUser(UserNameTextBox.Text, PasswordTextBox.Text);
 
                 if (loggedUserId == 0)
                 {

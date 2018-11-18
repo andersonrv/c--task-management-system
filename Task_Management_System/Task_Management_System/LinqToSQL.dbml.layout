@@ -8,7 +8,7 @@
         <elementListCompartment Id="2ec3caa1-4ca9-477a-bb3a-54de870f92e4" absoluteBounds="2.2649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="de9e2992-8be4-484e-9110-34df6ace048e" absoluteBounds="3.5, 3.875, 2, 1.3862939453125005">
+    <classShape Id="de9e2992-8be4-484e-9110-34df6ace048e" absoluteBounds="3.5, 3.875, 2, 1.3862939453124996">
       <DataClassMoniker Name="/LinqToSQLDataContext/TBoard" />
       <nestedChildShapes>
         <elementListCompartment Id="492bfc9d-cbed-4b6d-a5c7-5459c652e421" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />

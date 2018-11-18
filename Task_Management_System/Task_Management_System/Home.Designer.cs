@@ -67,7 +67,7 @@
             this.BoardArea.Name = "BoardArea";
             this.BoardArea.SelectedIndex = 0;
             this.BoardArea.Size = new System.Drawing.Size(1286, 889);
-            this.BoardArea.TabIndex = 1;
+            this.BoardArea.TabIndex = 3;
             // 
             // DeleteTask
             // 
@@ -75,7 +75,7 @@
             this.DeleteTask.Location = new System.Drawing.Point(820, 14);
             this.DeleteTask.Name = "DeleteTask";
             this.DeleteTask.Size = new System.Drawing.Size(120, 46);
-            this.DeleteTask.TabIndex = 7;
+            this.DeleteTask.TabIndex = 4;
             this.DeleteTask.Text = "- Task";
             this.DeleteTask.UseVisualStyleBackColor = true;
             // 
@@ -85,7 +85,7 @@
             this.BoardNameTextBox.Location = new System.Drawing.Point(180, 14);
             this.BoardNameTextBox.Name = "BoardNameTextBox";
             this.BoardNameTextBox.Size = new System.Drawing.Size(459, 39);
-            this.BoardNameTextBox.TabIndex = 8;
+            this.BoardNameTextBox.TabIndex = 1;
             // 
             // Home
             // 

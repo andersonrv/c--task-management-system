@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,10 @@ namespace Task_Management_System
 {
     class LinqToSQLCRUD
     {
-        public static int LoginUser(string UserName, string Pass, string connectString)
+        public static int LoginUser(string UserName, string Pass)
         {
             
-            LinqToSQLDataContext db = new LinqToSQLDataContext(connectString);
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
 
             //Look for user in the DB
 
@@ -33,28 +34,51 @@ namespace Task_Management_System
             }
         }
 
-        public static void CreateBoard(string BoardName, int UserId, string connectString)
+        public static IEnumerable<TBoard> ReadBoards(int userId)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TBoard>(@"SELECT BoardId, BoardName, UserId
+                                                FROM TBoards
+                                                WHERE UserId = {0}", userId);
+
+            return query;
+        }
+
+        public static void CreateBoard(string BoardName, int UserId)
         { 
             
-            LinqToSQLDataContext db = new LinqToSQLDataContext(connectString);
-            
-            //Create new Employee
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
 
-            TBoard newBoard = new TBoard();
-            newBoard.BoardName = BoardName;
-            newBoard.UserId = UserId;
-            
-            //Add new Employee to database
+            //Create new Board
+
+            TBoard newBoard = new TBoard
+            {
+                BoardName = BoardName,
+                UserId = UserId
+            };
+
+            //db.InsertTBoard(newBoard); //useless
+            //Add new Board to database
             db.TBoards.InsertOnSubmit(newBoard);
 
+            Debug.WriteLine(newBoard.BoardId);
+
             //Save changes to Database.
-            db.SubmitChanges();
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
         }
 
-        public static void ReadBoard()
-        {
 
-        }
+
+
+
     }
 }

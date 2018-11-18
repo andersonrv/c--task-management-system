@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Task_Management_System
-{
-    public class Board : TabPage
+{   
+    partial class TUser
     {
-        private string BoardName;
-        private int UserId;
-        private int BoardId;
+    }
 
-        public Board(string Name, int UserId)
+    partial class TBoard : TabPage
+    {
+        public TBoard(string Name, int UserId)
         {
             this.BoardName = Name;
             this.UserId = UserId;
@@ -24,7 +16,7 @@ namespace Task_Management_System
             Controls.Add(new BoardContent());
         }
 
-        public Board(string Name, int UserId, int BoardId)
+        public TBoard(int BoardId, string Name, int UserId)
         {
             this.BoardName = Name;
             this.UserId = UserId;
@@ -32,5 +24,21 @@ namespace Task_Management_System
             Text = Name;
             Controls.Add(new BoardContent());
         }
+    }
+
+    partial class TBoardAccess
+    {
+    }
+
+    partial class TList
+    {
+    }
+
+    partial class TTask
+    {
+    }
+
+    partial class TStatus
+    {
     }
 }

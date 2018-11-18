@@ -19,7 +19,7 @@ CREATE TABLE [TUsers] (
 );
 
 CREATE TABLE [TBoards] (
-  [BoardId] int IDENTITY(1000, 1),
+  [BoardId] int IDENTITY(1, 1),
   [BoardName] nvarchar(80),
   [UserId] int FOREIGN KEY REFERENCES [TUsers]([UserId]),
   PRIMARY KEY ([BoardId])
