@@ -30,6 +30,7 @@
         {
             this.ListArea = new System.Windows.Forms.FlowLayoutPanel();
             this.AddList = new System.Windows.Forms.Button();
+            this.BoardNameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ListArea
@@ -56,15 +57,27 @@
             this.AddList.UseVisualStyleBackColor = true;
             this.AddList.Click += new System.EventHandler(this.AddList_Click);
             // 
+            // BoardNameLabel
+            // 
+            this.BoardNameLabel.AutoSize = true;
+            this.BoardNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.BoardNameLabel.Location = new System.Drawing.Point(186, 18);
+            this.BoardNameLabel.Name = "BoardNameLabel";
+            this.BoardNameLabel.Size = new System.Drawing.Size(93, 32);
+            this.BoardNameLabel.TabIndex = 8;
+            this.BoardNameLabel.Text = "label1";
+            // 
             // BoardContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BoardNameLabel);
             this.Controls.Add(this.ListArea);
             this.Controls.Add(this.AddList);
             this.Name = "BoardContent";
             this.Size = new System.Drawing.Size(1300, 856);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -72,5 +85,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel ListArea;
         private System.Windows.Forms.Button AddList;
+        private System.Windows.Forms.Label BoardNameLabel;
     }
 }

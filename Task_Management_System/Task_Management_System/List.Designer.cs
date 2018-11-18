@@ -38,17 +38,19 @@
             // 
             this.ListName.AutoSize = true;
             this.ListName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListName.Location = new System.Drawing.Point(60, 15);
+            this.ListName.Location = new System.Drawing.Point(90, 23);
+            this.ListName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListName.Name = "ListName";
-            this.ListName.Size = new System.Drawing.Size(42, 15);
+            this.ListName.Size = new System.Drawing.Size(62, 23);
             this.ListName.TabIndex = 1;
             this.ListName.Text = "List 1";
             // 
             // addTaskButton
             // 
-            this.addTaskButton.Location = new System.Drawing.Point(10, 68);
+            this.addTaskButton.Location = new System.Drawing.Point(15, 105);
+            this.addTaskButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskButton.Name = "addTaskButton";
-            this.addTaskButton.Size = new System.Drawing.Size(143, 25);
+            this.addTaskButton.Size = new System.Drawing.Size(214, 38);
             this.addTaskButton.TabIndex = 2;
             this.addTaskButton.Text = "Add Task";
             this.addTaskButton.UseVisualStyleBackColor = true;
@@ -58,31 +60,35 @@
             // 
             this.taskPanel.AutoScroll = true;
             this.taskPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.taskPanel.Location = new System.Drawing.Point(10, 111);
+            this.taskPanel.Location = new System.Drawing.Point(15, 171);
+            this.taskPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskPanel.Name = "taskPanel";
-            this.taskPanel.Size = new System.Drawing.Size(143, 234);
+            this.taskPanel.Size = new System.Drawing.Size(214, 360);
             this.taskPanel.TabIndex = 3;
             // 
             // taskInputBox
             // 
-            this.taskInputBox.Location = new System.Drawing.Point(10, 33);
+            this.taskInputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskInputBox.Location = new System.Drawing.Point(15, 51);
+            this.taskInputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskInputBox.Name = "taskInputBox";
             this.taskInputBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.taskInputBox.Size = new System.Drawing.Size(143, 29);
+            this.taskInputBox.Size = new System.Drawing.Size(212, 42);
             this.taskInputBox.TabIndex = 4;
             this.taskInputBox.Text = "";
             // 
             // List
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.taskInputBox);
             this.Controls.Add(this.taskPanel);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.ListName);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "List";
-            this.Size = new System.Drawing.Size(166, 359);
+            this.Size = new System.Drawing.Size(249, 552);
             this.ResumeLayout(false);
             this.PerformLayout();
 

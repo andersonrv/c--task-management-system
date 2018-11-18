@@ -32,6 +32,7 @@
             this.DeleteBoard = new System.Windows.Forms.Button();
             this.BoardArea = new System.Windows.Forms.TabControl();
             this.DeleteTask = new System.Windows.Forms.Button();
+            this.BoardNameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // AddBoard
@@ -71,18 +72,27 @@
             // DeleteTask
             // 
             this.DeleteTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteTask.Location = new System.Drawing.Point(580, 12);
+            this.DeleteTask.Location = new System.Drawing.Point(820, 14);
             this.DeleteTask.Name = "DeleteTask";
             this.DeleteTask.Size = new System.Drawing.Size(120, 46);
             this.DeleteTask.TabIndex = 7;
             this.DeleteTask.Text = "- Task";
             this.DeleteTask.UseVisualStyleBackColor = true;
             // 
+            // BoardNameTextBox
+            // 
+            this.BoardNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.BoardNameTextBox.Location = new System.Drawing.Point(180, 14);
+            this.BoardNameTextBox.Name = "BoardNameTextBox";
+            this.BoardNameTextBox.Size = new System.Drawing.Size(459, 39);
+            this.BoardNameTextBox.TabIndex = 8;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 969);
+            this.Controls.Add(this.BoardNameTextBox);
             this.Controls.Add(this.DeleteTask);
             this.Controls.Add(this.BoardArea);
             this.Controls.Add(this.DeleteBoard);
@@ -91,6 +101,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +111,6 @@
         private System.Windows.Forms.TabControl BoardArea;
         private System.Windows.Forms.Button DeleteBoard;
         private System.Windows.Forms.Button DeleteTask;
+        private System.Windows.Forms.TextBox BoardNameTextBox;
     }
 }

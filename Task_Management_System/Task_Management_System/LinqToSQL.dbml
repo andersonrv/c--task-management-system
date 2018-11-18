@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="aresendeviana683" Class="LinqToSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=199.103.60.77;Initial Catalog=aresendeviana683;Persist Security Info=True;User ID=aresendeviana683" SettingsObjectName="Task_Management_System.Properties.Settings" SettingsPropertyName="TMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBoardAccess" Member="TBoardAccesses">
+    <Type Name="TBoardAccess">
+      <Column Name="AccessId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BoardId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsUserAdm" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TBoard_TBoardAccess" Member="TBoard" ThisKey="BoardId" OtherKey="BoardId" Type="TBoard" IsForeignKey="true" />
+      <Association Name="TUser_TBoardAccess" Member="TUser" ThisKey="UserId" OtherKey="UserId" Type="TUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBoards" Member="TBoards">
+    <Type Name="TBoard">
+      <Column Name="BoardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BoardName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TBoard_TBoardAccess" Member="TBoardAccesses" ThisKey="BoardId" OtherKey="BoardId" Type="TBoardAccess" />
+      <Association Name="TBoard_TTask" Member="TTasks" ThisKey="BoardId" OtherKey="TaskWho" Type="TTask" />
+      <Association Name="TBoard_TList" Member="TLists" ThisKey="BoardId" OtherKey="BoardId" Type="TList" />
+      <Association Name="TUser_TBoard" Member="TUser" ThisKey="UserId" OtherKey="UserId" Type="TUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TStatus" Member="TStatus">
+    <Type Name="TStatus">
+      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StatusName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="TStatus_TTask" Member="TTasks" ThisKey="StatusId" OtherKey="TaskStatus" Type="TTask" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTasks" Member="TTasks">
+    <Type Name="TTask">
+      <Column Name="TasktId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="TaskDescription" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TaskDue" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="TaskWho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaskList" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TStatus_TTask" Member="TStatus" ThisKey="TaskStatus" OtherKey="StatusId" Type="TStatus" IsForeignKey="true" />
+      <Association Name="TBoard_TTask" Member="TBoard" ThisKey="TaskWho" OtherKey="BoardId" Type="TBoard" IsForeignKey="true" />
+      <Association Name="TList_TTask" Member="TList" ThisKey="TaskList" OtherKey="ListId" Type="TList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUsers" Member="TUsers">
+    <Type Name="TUser">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Pass" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Association Name="TUser_TBoardAccess" Member="TBoardAccesses" ThisKey="UserId" OtherKey="UserId" Type="TBoardAccess" />
+      <Association Name="TUser_TBoard" Member="TBoards" ThisKey="UserId" OtherKey="UserId" Type="TBoard" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TLists" Member="TLists">
+    <Type Name="TList">
+      <Column Name="ListId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ListName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="BoardId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TList_TTask" Member="TTasks" ThisKey="ListId" OtherKey="TaskList" Type="TTask" />
+      <Association Name="TBoard_TList" Member="TBoard" ThisKey="BoardId" OtherKey="BoardId" Type="TBoard" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

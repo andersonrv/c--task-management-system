@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="LinqToSQL">
+  <DataContextMoniker Name="/LinqToSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d60677ba-98fc-4309-a077-6fc443a5513a" absoluteBounds="2.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TBoardAccess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ec3caa1-4ca9-477a-bb3a-54de870f92e4" absoluteBounds="2.2649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de9e2992-8be4-484e-9110-34df6ace048e" absoluteBounds="3.5, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TBoard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="492bfc9d-cbed-4b6d-a5c7-5459c652e421" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e4fad99-5ef5-4b85-9ea3-7c0c4783ce8b" absoluteBounds="8.625, 0.625, 2, 1.1939925130208318">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bda17603-cc65-4884-9c48-a0b1b11353b7" absoluteBounds="8.64, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b47f7029-74fe-4cad-88a2-3934cac5a04b" absoluteBounds="9, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cb56a4b-b371-49ca-8069-7361c7876efa" absoluteBounds="9.015, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66008443-ac4e-47cb-b2ec-9d37633c66c7" absoluteBounds="1, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a69bc909-93ae-4eb2-9be0-edd150f0a948" absoluteBounds="1.0150000000000001, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34466d04-01b6-4fc3-8f24-c448db974500" absoluteBounds="6.25, 3.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LinqToSQLDataContext/TList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87f7c328-0066-46dd-bb06-2475f1b1d333" absoluteBounds="6.265, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 3.875); (3.875 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TBoard/TBoard_TBoardAccess" />
+      <nodes>
+        <classShapeMoniker Id="de9e2992-8be4-484e-9110-34df6ace048e" />
+        <classShapeMoniker Id="d60677ba-98fc-4309-a077-6fc443a5513a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.8125 : 1.81899251302083); (9.8125 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TStatus/TStatus_TTask" />
+      <nodes>
+        <classShapeMoniker Id="9e4fad99-5ef5-4b85-9ea3-7c0c4783ce8b" />
+        <classShapeMoniker Id="b47f7029-74fe-4cad-88a2-3934cac5a04b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.9175439453125); (9 : 4.9175439453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TBoard/TBoard_TTask" />
+      <nodes>
+        <classShapeMoniker Id="de9e2992-8be4-484e-9110-34df6ace048e" />
+        <classShapeMoniker Id="b47f7029-74fe-4cad-88a2-3934cac5a04b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 3.875); (2.625 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TUser/TUser_TBoardAccess" />
+      <nodes>
+        <classShapeMoniker Id="66008443-ac4e-47cb-b2ec-9d37633c66c7" />
+        <classShapeMoniker Id="d60677ba-98fc-4309-a077-6fc443a5513a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 4.56814697265625); (3.5 : 4.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TUser/TUser_TBoard" />
+      <nodes>
+        <classShapeMoniker Id="66008443-ac4e-47cb-b2ec-9d37633c66c7" />
+        <classShapeMoniker Id="de9e2992-8be4-484e-9110-34df6ace048e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.00564697265625); (9 : 4.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TList/TList_TTask" />
+      <nodes>
+        <classShapeMoniker Id="34466d04-01b6-4fc3-8f24-c448db974500" />
+        <classShapeMoniker Id="b47f7029-74fe-4cad-88a2-3934cac5a04b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.19314697265625); (6.25 : 4.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSQLDataContext/TBoard/TBoard_TList" />
+      <nodes>
+        <classShapeMoniker Id="de9e2992-8be4-484e-9110-34df6ace048e" />
+        <classShapeMoniker Id="34466d04-01b6-4fc3-8f24-c448db974500" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -10,21 +10,33 @@ using System.Windows.Forms;
 
 namespace Task_Management_System
 {
-
-
     public partial class Home : Form
     {
         FlowLayoutPanel ListSpace = new FlowLayoutPanel();
+        protected string connectString = "Data Source=199.103.60.77;Initial Catalog=aresendeviana683;Persist Security Info=True;User ID=aresendeviana683;Password=4577695275537560";
 
-        public Home()
+
+        public Home(int loggedUser)
         {
             InitializeComponent();
         }
 
         private void AddBoard_Click(object sender, EventArgs e)
         {
-            Board aBoard = new Board("New Board"); // We need to make this field editable once a board is created
-            BoardArea.TabPages.Add(aBoard);
+            if (BoardNameTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter a valid name for the board");
+            }
+            else
+            {
+                Board aBoard = new Board("New Board"); // We need to make this field editable once a board is created
+
+                LinqToSQLCRUD.AddBoard(BoardNameTextBox.Text, 100, connectString); // HARDCODED USER ID!!! IT NEEDS TO BE REPLACED ONCE THE LOGIN SYSTEM WORKS!
+            
+                BoardArea.TabPages.Add(aBoard);
+            }
+
+
         }
 
         private void DeleteBoard_Click(object sender, EventArgs e)

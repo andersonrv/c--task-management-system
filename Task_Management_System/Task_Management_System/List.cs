@@ -12,7 +12,7 @@ namespace Task_Management_System
 {
     public partial class List : UserControl
     {
-        LinkLabel taskLabel;
+        //LinkLabel taskLabel;
         string taskName;
         string taskMarker = "\u21DB ";
         Font taskFont = new Font("Arial", 9);
@@ -21,7 +21,8 @@ namespace Task_Management_System
         Size taskLabelSize = new Size(155, 0);
         bool taskAutoSize = true;
 
-
+        List<Task> ListOfTask = new List<Task>();
+        
         public List()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace Task_Management_System
 
         private void AddTask_Click(object sender, EventArgs e)
         {
-            taskLabel = new LinkLabel();
             taskName = taskInputBox.Text;
+            LinkLabel taskLabel = new LinkLabel();
             taskLabel.Text = taskMarker + taskName + "\n";
             taskLabel.Font = taskFont;
             taskLabel.MaximumSize = taskLabelSize;
@@ -41,8 +42,12 @@ namespace Task_Management_System
             taskLabel.Click += Task_Click;
             if (taskName != "")
             {
+                
+                Task task = new Task(taskName);
                 taskPanel.Controls.Add(taskLabel);
+                ListOfTask.Add(task);
                 taskInputBox.Text = "";
+
             }
             else
             {
@@ -50,6 +55,33 @@ namespace Task_Management_System
             }    
             
         }
+
+        //private void AddTask_Click(object sender, EventArgs e)
+        //{
+        //    taskName = taskInputBox.Text;
+        //    taskLabel = new LinkLabel();
+        //    taskLabel.Text = taskMarker + taskName + "\n";
+        //    taskLabel.Font = taskFont;
+        //    taskLabel.MaximumSize = taskLabelSize;
+        //    taskLabel.AutoSize = taskAutoSize;
+        //    taskLabel.LinkColor = taskLinkColor;
+        //    taskLabel.ActiveLinkColor = taskActiveLinkColor;
+        //    taskLabel.Click += Task_Click;
+        //    if (taskName != "")
+        //    {
+
+        //        Task task = new Task(taskName);
+        //        taskPanel.Controls.Add(taskLabel);
+        //        ListOfTask.Add(task);
+        //        taskInputBox.Text = "";
+
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Please enter a title for the task.");
+        //    }
+
+        //}
 
         private void Task_Click(object sender, EventArgs e)
         {
