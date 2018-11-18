@@ -16,18 +16,24 @@ namespace Task_Management_System
             //Look for user in the DB
 
             TUser user = db.TUsers.FirstOrDefault(u => u.UserName.Equals(UserName));
-            if (user.Pass == Pass)
-            {
-                return user.UserId;
-            }
-            else
+            if (user is null)
             {
                 return 0;
             }
-
+            else
+            {
+                if (user.Pass == Pass)
+                {
+                    return user.UserId;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
         }
 
-        public static void AddBoard(string BoardName, int UserId, string connectString)
+        public static void CreateBoard(string BoardName, int UserId, string connectString)
         { 
             
             LinqToSQLDataContext db = new LinqToSQLDataContext(connectString);
@@ -43,6 +49,11 @@ namespace Task_Management_System
 
             //Save changes to Database.
             db.SubmitChanges();
+
+        }
+
+        public static void ReadBoard()
+        {
 
         }
     }

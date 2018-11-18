@@ -14,11 +14,12 @@ namespace Task_Management_System
     {
         FlowLayoutPanel ListSpace = new FlowLayoutPanel();
         protected string connectString = "Data Source=199.103.60.77;Initial Catalog=aresendeviana683;Persist Security Info=True;User ID=aresendeviana683;Password=4577695275537560";
-
+        protected int userId;
 
         public Home(int loggedUser)
         {
             InitializeComponent();
+            userId = loggedUser;
         }
 
         private void AddBoard_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Task_Management_System
             {
                 Board aBoard = new Board("New Board"); // We need to make this field editable once a board is created
 
-                LinqToSQLCRUD.AddBoard(BoardNameTextBox.Text, 100, connectString); // HARDCODED USER ID!!! IT NEEDS TO BE REPLACED ONCE THE LOGIN SYSTEM WORKS!
+                LinqToSQLCRUD.CreateBoard(BoardNameTextBox.Text, userId, connectString);
             
                 BoardArea.TabPages.Add(aBoard);
             }
