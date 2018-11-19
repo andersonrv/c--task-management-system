@@ -22,7 +22,7 @@ namespace Task_Management_System
         {
             InitializeComponent();
             TaskNameLabel.Text = task;
-            ResponsibleBox.DataSource = responsibles;
+            WhoBox.DataSource = responsibles;
             StatusBox.DataSource = status;
             
         }
@@ -87,7 +87,7 @@ namespace Task_Management_System
             get { return _taskDue; }
             set
             {
-                _taskDue = TaskDateTimePicker.Value;
+                _taskDue = DueTimePicker.Value;
             }
         }
         
@@ -97,7 +97,7 @@ namespace Task_Management_System
             get { return _responsible; }
             set
             {
-                _responsible = ResponsibleBox.Text;
+                _responsible = WhoBox.Text;
             }
         }
 
@@ -109,6 +109,16 @@ namespace Task_Management_System
             {
                 _status = StatusBox.Text;
             }
+        }
+
+        private void SaveChangesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteTaskButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

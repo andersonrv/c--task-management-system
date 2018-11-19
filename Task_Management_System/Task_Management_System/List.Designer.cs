@@ -43,7 +43,7 @@
             this.ListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListNameLabel.Name = "ListNameLabel";
             this.ListNameLabel.Size = new System.Drawing.Size(62, 23);
-            this.ListNameLabel.TabIndex = 1;
+            this.ListNameLabel.TabIndex = 3;
             this.ListNameLabel.Text = "List 1";
             // 
             // addTaskButton
@@ -52,7 +52,7 @@
             this.addTaskButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskButton.Name = "addTaskButton";
             this.addTaskButton.Size = new System.Drawing.Size(214, 38);
-            this.addTaskButton.TabIndex = 2;
+            this.addTaskButton.TabIndex = 1;
             this.addTaskButton.Text = "Add Task";
             this.addTaskButton.UseVisualStyleBackColor = true;
             this.addTaskButton.Click += new System.EventHandler(this.AddTask_Click);
@@ -65,7 +65,7 @@
             this.taskPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(214, 360);
-            this.taskPanel.TabIndex = 3;
+            this.taskPanel.TabIndex = 2;
             // 
             // taskInputBox
             // 
@@ -75,7 +75,7 @@
             this.taskInputBox.Name = "taskInputBox";
             this.taskInputBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.taskInputBox.Size = new System.Drawing.Size(212, 42);
-            this.taskInputBox.TabIndex = 4;
+            this.taskInputBox.TabIndex = 0;
             this.taskInputBox.Text = "";
             // 
             // DeleteListButton
@@ -84,7 +84,7 @@
             this.DeleteListButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeleteListButton.Name = "DeleteListButton";
             this.DeleteListButton.Size = new System.Drawing.Size(214, 38);
-            this.DeleteListButton.TabIndex = 5;
+            this.DeleteListButton.TabIndex = 4;
             this.DeleteListButton.Text = "Delete List";
             this.DeleteListButton.UseVisualStyleBackColor = true;
             this.DeleteListButton.Click += new System.EventHandler(this.DeleteListButton_Click);
@@ -158,7 +158,7 @@
             this.ListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListNameLabel.Name = "ListNameLabel";
             this.ListNameLabel.Size = new System.Drawing.Size(62, 23);
-            this.ListNameLabel.TabIndex = 1;
+            this.ListNameLabel.TabIndex = 3;
             this.ListNameLabel.Text = "List 1";
             // 
             // addTaskButton
@@ -167,7 +167,7 @@
             this.addTaskButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskButton.Name = "addTaskButton";
             this.addTaskButton.Size = new System.Drawing.Size(214, 38);
-            this.addTaskButton.TabIndex = 2;
+            this.addTaskButton.TabIndex = 1;
             this.addTaskButton.Text = "Add Task";
             this.addTaskButton.UseVisualStyleBackColor = true;
             this.addTaskButton.Click += new System.EventHandler(this.AddTask_Click);
@@ -176,11 +176,12 @@
             // 
             this.taskPanel.AutoScroll = true;
             this.taskPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.taskPanel.WrapContents = false;
             this.taskPanel.Location = new System.Drawing.Point(15, 171);
             this.taskPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(214, 360);
-            this.taskPanel.TabIndex = 3;
+            this.taskPanel.TabIndex = 2;
             // 
             // taskInputBox
             // 
@@ -190,7 +191,7 @@
             this.taskInputBox.Name = "taskInputBox";
             this.taskInputBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.taskInputBox.Size = new System.Drawing.Size(212, 42);
-            this.taskInputBox.TabIndex = 4;
+            this.taskInputBox.TabIndex = 0;
             this.taskInputBox.Text = "";
             // 
             // DeleteListButton
@@ -199,7 +200,7 @@
             this.DeleteListButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeleteListButton.Name = "DeleteListButton";
             this.DeleteListButton.Size = new System.Drawing.Size(214, 38);
-            this.DeleteListButton.TabIndex = 5;
+            this.DeleteListButton.TabIndex = 4;
             this.DeleteListButton.Text = "Delete List";
             this.DeleteListButton.UseVisualStyleBackColor = true;
             this.DeleteListButton.Click += new System.EventHandler(this.DeleteListButton_Click);

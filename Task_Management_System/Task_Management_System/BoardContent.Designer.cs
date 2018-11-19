@@ -63,7 +63,7 @@
             this.ListNameTextBox.Location = new System.Drawing.Point(187, 11);
             this.ListNameTextBox.Name = "ListNameTextBox";
             this.ListNameTextBox.Size = new System.Drawing.Size(459, 39);
-            this.ListNameTextBox.TabIndex = 8;
+            this.ListNameTextBox.TabIndex = 0;
             // 
             // BoardContent
             // 

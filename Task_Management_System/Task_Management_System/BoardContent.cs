@@ -47,7 +47,7 @@ namespace Task_Management_System
             else
             {
                 // Adding List to DB
-                LinqToSQLCRUD.CreateList(ListNameTextBox.Text, BoardId);
+                LinqToSQLCRUD.CreateList(ListNameTextBox.Text, this.BoardId);
 
                 // Adding to ListArea
 
@@ -59,6 +59,8 @@ namespace Task_Management_System
                     aList.BackColor = Color.FromArgb(rgb.Next(minValue, maxValue), rgb.Next(minValue, maxValue), rgb.Next(minValue, maxValue));
                     ListArea.Controls.Add(aList);
                 }
+
+                ListNameTextBox.Clear();
             }
         }
     }

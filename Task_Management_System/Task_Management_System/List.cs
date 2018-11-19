@@ -40,6 +40,7 @@ namespace Task_Management_System
             taskLabel.LinkColor = taskLinkColor;
             taskLabel.ActiveLinkColor = taskActiveLinkColor;
             taskLabel.Click += Task_Click;
+
             if (taskName != "")
             {
                 
@@ -66,5 +67,6 @@ namespace Task_Management_System
         {
 
         }
+
     }
 }

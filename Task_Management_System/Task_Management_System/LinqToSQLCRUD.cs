@@ -82,6 +82,8 @@ namespace Task_Management_System
                 Console.WriteLine(e);
             }
         }
+        
+        // DELETEBOARD NEEDS TO DELETE LISTS ON CASCADE AND ITS TASKS
 
         public static void DeleteBoard(int BoardId)
         {
@@ -156,6 +158,8 @@ namespace Task_Management_System
             }
         }
 
+        // DELETELISTS NEEDS TO DELETE TASKS ON CASCADE
+
         public static void DeleteList(int ListId)
         {
 
@@ -179,6 +183,112 @@ namespace Task_Management_System
         }
 
         // Work on edit ListName in the future.
+
+        public static IEnumerable<TTask> ReadTasks(int listId)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TTask>(@"SELECT TasktId, TaskName, TaskDescription, TaskDue, TaskWho, TaskStatus, TaskList
+                                                FROM TTasks
+                                                WHERE TaskList = {0}", listId);
+
+            return query;
+        }
+
+        public static IEnumerable<TTask> GetLastTaskInserted()
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TTask>(@"SELECT TOP 1 *
+                                                FROM TTasks
+                                                ORDER BY TasktId DESC");
+
+            return query;
+        }
+
+        public static IEnumerable<TTask> GetTaskById(int taskId)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TTask>(@"SELECT *
+                                                FROM TTasks
+                                                WHERE TasktId = {0}", taskId);
+
+            return query;
+        }
+
+        public static void CreateTask(string taskName, int listId)
+        {
+
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            //Create new Board
+
+            TTask newTask = new TTask
+            {
+                TaskName = taskName,
+                TaskList = listId
+            };
+
+            //Add new Board to database
+            db.TTasks.InsertOnSubmit(newTask);
+
+            //Save changes to Database.
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        // DELETELISTS NEEDS TO DELETE TASKS ON CASCADE
+        public static void DeleteTask(int taskId)
+        {
+
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            //Get Board to be deleted
+            TTask taskToBeDeleted = db.TTasks.FirstOrDefault(t => t.TasktId.Equals(taskId));
+
+            //Delete Board on database
+            db.TTasks.DeleteOnSubmit(taskToBeDeleted);
+
+            //Save changes to Database.
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public static void UpdateTask(int taskId, string taskDescription, DateTime taskDue, int taskWho, int taskStatus)
+        {
+
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            //Get Board to be deleted
+            TTask taskToBeUpdated = db.TTasks.FirstOrDefault(t => t.TasktId.Equals(taskId));
+
+            taskToBeUpdated.TaskDescription = taskDescription;
+            taskToBeUpdated.TaskDue = taskDue;
+            taskToBeUpdated.TaskWho = taskWho;
+            taskToBeUpdated.TaskStatus = taskStatus;
+
+            //Save changes to Database.
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
     }
 }
