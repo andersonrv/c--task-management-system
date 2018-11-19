@@ -56,39 +56,15 @@ namespace Task_Management_System
             
         }
 
-        //private void AddTask_Click(object sender, EventArgs e)
-        //{
-        //    taskName = taskInputBox.Text;
-        //    taskLabel = new LinkLabel();
-        //    taskLabel.Text = taskMarker + taskName + "\n";
-        //    taskLabel.Font = taskFont;
-        //    taskLabel.MaximumSize = taskLabelSize;
-        //    taskLabel.AutoSize = taskAutoSize;
-        //    taskLabel.LinkColor = taskLinkColor;
-        //    taskLabel.ActiveLinkColor = taskActiveLinkColor;
-        //    taskLabel.Click += Task_Click;
-        //    if (taskName != "")
-        //    {
-
-        //        Task task = new Task(taskName);
-        //        taskPanel.Controls.Add(taskLabel);
-        //        ListOfTask.Add(task);
-        //        taskInputBox.Text = "";
-
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please enter a title for the task.");
-        //    }
-
-        //}
-
         private void Task_Click(object sender, EventArgs e)
         {
             Task task = new Task(taskName);
             task.ShowDialog();
         }
 
-        
+        private void DeleteListButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.ListArea = new System.Windows.Forms.FlowLayoutPanel();
             this.AddList = new System.Windows.Forms.Button();
-            this.BoardNameLabel = new System.Windows.Forms.Label();
+            this.ListNameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ListArea
@@ -57,21 +57,19 @@
             this.AddList.UseVisualStyleBackColor = true;
             this.AddList.Click += new System.EventHandler(this.AddList_Click);
             // 
-            // BoardNameLabel
+            // ListNameTextBox
             // 
-            this.BoardNameLabel.AutoSize = true;
-            this.BoardNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.BoardNameLabel.Location = new System.Drawing.Point(186, 18);
-            this.BoardNameLabel.Name = "BoardNameLabel";
-            this.BoardNameLabel.Size = new System.Drawing.Size(93, 32);
-            this.BoardNameLabel.TabIndex = 8;
-            this.BoardNameLabel.Text = "label1";
+            this.ListNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListNameTextBox.Location = new System.Drawing.Point(187, 11);
+            this.ListNameTextBox.Name = "ListNameTextBox";
+            this.ListNameTextBox.Size = new System.Drawing.Size(459, 39);
+            this.ListNameTextBox.TabIndex = 8;
             // 
             // BoardContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BoardNameLabel);
+            this.Controls.Add(this.ListNameTextBox);
             this.Controls.Add(this.ListArea);
             this.Controls.Add(this.AddList);
             this.Name = "BoardContent";
@@ -85,6 +83,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel ListArea;
         private System.Windows.Forms.Button AddList;
-        private System.Windows.Forms.Label BoardNameLabel;
+        private System.Windows.Forms.TextBox ListNameTextBox;
     }
 }

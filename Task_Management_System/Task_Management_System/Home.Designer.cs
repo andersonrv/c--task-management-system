@@ -75,7 +75,7 @@
             this.DeleteTask.Location = new System.Drawing.Point(820, 14);
             this.DeleteTask.Name = "DeleteTask";
             this.DeleteTask.Size = new System.Drawing.Size(120, 46);
-            this.DeleteTask.TabIndex = 4;
+            this.DeleteTask.TabIndex = 3;
             this.DeleteTask.Text = "- Task";
             this.DeleteTask.UseVisualStyleBackColor = true;
             // 

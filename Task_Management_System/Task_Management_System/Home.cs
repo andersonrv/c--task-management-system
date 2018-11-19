@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace Task_Management_System
 {
@@ -25,6 +26,7 @@ namespace Task_Management_System
             {
                 TBoard tab = new TBoard(board.BoardId, board.BoardName, board.BoardId);
                 BoardArea.TabPages.Add(tab);
+                
             }
         }
 
@@ -32,27 +34,52 @@ namespace Task_Management_System
         {
             if (BoardNameTextBox.Text == "")
             {
-                MessageBox.Show("Please enter a valid name for the board");
+                MessageBox.Show("Please enter a valid name for the board.");
             }
             else
             {
-                //int generateBoardId = (int)(Int64)DateTimeOffset.Now.ToUnixTimeMilliseconds();
-
-
-                TBoard aBoard = new TBoard(BoardNameTextBox.Text, userId); // We need to make this field editable once a board is created
+                // Adding to DB
 
                 LinqToSQLCRUD.CreateBoard(BoardNameTextBox.Text, userId);
-            
-                BoardArea.TabPages.Add(aBoard);
+
+                // Adding to TabControl
+
+                var lastBoard = LinqToSQLCRUD.GetLastBoardInserted();
+                
+                foreach (var result in lastBoard)
+                {
+                    TBoard aBoard = new TBoard(result.BoardId, result.BoardName, (int)result.UserId);
+                    BoardArea.TabPages.Add(aBoard);
+                    BoardArea.SelectedTab = aBoard;
+                }
+
+                BoardNameTextBox.Clear();
+                
             }
         }
-
+        // IT NEEDS TO IMPLEMENT DELETE ON CASCADE!!!!!!!!!!!!!!!! WHEN DELETING A BOARD, ITS TASKS STILL REMAIN IN THE DATABASE!!!!
         private void DeleteBoard_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Do you really want to delete the current board? \rThis action is not reversible.", "DELETE BOARD!" , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (BoardArea.TabCount > 0)
             {
-                BoardArea.TabPages.Remove(BoardArea.SelectedTab);
+                if(MessageBox.Show("Do you really want to delete the current board? \rThis action is not reversible.", "DELETE BOARD!" , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Remove from DB
+                    string propName = "BoardId";
+                    int boardIdToBeDeleted = (int)BoardArea.SelectedTab.GetType().GetProperty(propName).GetValue(BoardArea.SelectedTab, null);
+                    LinqToSQLCRUD.DeleteBoard(boardIdToBeDeleted);
+                
+                    Debug.WriteLine(BoardArea.SelectedTab.GetType().GetProperty(propName).GetValue(BoardArea.SelectedTab, null));
+                
+                    // Remove from TabControl
+                    BoardArea.TabPages.Remove(BoardArea.SelectedTab);
+                }
             }
+            else
+            {
+                MessageBox.Show("You do not have any boards to be deleted.");
+            }
+
         }
 
 
