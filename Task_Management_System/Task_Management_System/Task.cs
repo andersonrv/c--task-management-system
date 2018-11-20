@@ -21,45 +21,33 @@ namespace Task_Management_System
         int TaskStatus;
         int TaskList;
 
-        //hardcoded responsibles and status, move to DB in the future
-        
-
-        //public string[] users = { "Anderson", "John Louis", "Parvir" };
-        
-
-        //public string[] status = { "Ongoing", "Completed", "Obstructed" };
-
-        public Task(int taskId, string taskName, int listId)
+        public Task(int taskId, string taskName, string taskDescription, DateTime taskDue, int taskWho, int taskStatus, int listId)
         {
             InitializeComponent();
+            TasktId = taskId;
+            TaskName = taskName;
+            TaskList = listId;
+
             TaskNameLabel.Text = taskName;
 
+            TextBoxDescription.Text = taskDescription;
+
+            DueTimePicker.Value = taskDue;
+
             var users = PopulateUserList();
-            //WhoBox.DataSource = users;
             WhoBox.DataSource = new BindingSource(users, null);
             WhoBox.DisplayMember = "Value";
             WhoBox.ValueMember = "Key";
+
+            WhoBox.SelectedValue = taskWho;
 
             var status = PopulateStatusList();
             StatusBox.DataSource = new BindingSource(status, null);
             StatusBox.DisplayMember = "Value";
             StatusBox.ValueMember = "Key";
 
-            this.TasktId = taskId;
-            this.TaskName = taskName;
-            this.TaskList = listId;
+            StatusBox.SelectedValue = taskStatus;
         }
-
-        //public Task(int TaskId, string TaskName, string TaskDescription, DateTime TaskDue, int TaskWho, int TaskStatus, int TaskListId)
-        //{
-        //    this.TasktId = TaskId; // FIX PROPERTY TYPO LATER... 
-        //    this.TaskName = TaskName;
-        //    this.TaskDescription = TaskDescription;
-        //    this.TaskDue = TaskDue;
-        //    this.TaskWho = TaskWho;
-        //    this.TaskStatus = TaskStatus;
-        //    this.TaskList = TaskListId;
-        //}
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
@@ -72,6 +60,8 @@ namespace Task_Management_System
             int status = selectedStatus.Key;
 
             LinqToSQLCRUD.UpdateTask(id, what, when, who, status);
+
+            // ADD A MESSAGE TO LET THE USER KNOW THAT THE UPDATE WAS SUCCESSFUL!!!
         }
 
         private void DeleteTaskButton_Click(object sender, EventArgs e)

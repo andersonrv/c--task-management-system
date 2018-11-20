@@ -118,7 +118,7 @@ namespace Task_Management_System
             var result = LinqToSQLCRUD.GetTaskById(taskId);
             foreach (var item in result)
             {
-                Task task = new Task(item.TasktId, item.TaskName, (int)item.TaskList);
+                Task task = new Task(item.TasktId, item.TaskName, item.TaskDescription, (DateTime)item.TaskDue, (int)item.TaskWho, (int)item.TaskStatus, (int)item.TaskList);
                 task.ShowDialog();
             }
         }
