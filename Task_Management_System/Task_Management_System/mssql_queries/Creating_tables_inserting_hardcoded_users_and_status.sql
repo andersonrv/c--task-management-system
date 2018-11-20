@@ -49,7 +49,7 @@ CREATE TABLE [TStatus] (
 CREATE TABLE [TTasks] (
   [TasktId] int IDENTITY(10000, 1),
   [TaskName] nvarchar(80),
-  [TaskDescription] nvarchar(1000),
+  [TaskDescription] nvarchar(2000),
   [TaskDue] datetime2,
   [TaskWho] int	FOREIGN KEY REFERENCES [TBoards]([BoardId]),
   [TaskStatus] int FOREIGN KEY REFERENCES [TStatus]([StatusId]),
@@ -57,7 +57,7 @@ CREATE TABLE [TTasks] (
   PRIMARY KEY ([TasktId])
 );
 
-INSERT INTO [TUsers](UserName, Pass) VALUES('anderson', '1234'), ('johnlouis', '1234'), ('parvir', '1234');
+INSERT INTO [TUsers](UserName, Pass) VALUES('anderson', '1234'), ('jl', '1234'), ('parvir', '1234');
 INSERT INTO [TStatus]([StatusName]) VALUES('Ongoing'), ('Completed'), ('Obstructed');
 
 

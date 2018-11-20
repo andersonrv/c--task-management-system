@@ -24,7 +24,8 @@ namespace Task_Management_System
             var boards = LinqToSQLCRUD.ReadBoards(userId);
             foreach (var board in boards)
             {
-                TBoard tab = new TBoard(board.BoardId, board.BoardName, board.BoardId);
+                //TBoard tab = new TBoard(board.BoardId, board.BoardName, board.BoardId);
+                Board tab = new Board(board.BoardId, board.BoardName, board.BoardId);
                 BoardArea.TabPages.Add(tab);
                 
             }
@@ -48,7 +49,8 @@ namespace Task_Management_System
                 
                 foreach (var result in lastBoard)
                 {
-                    TBoard aBoard = new TBoard(result.BoardId, result.BoardName, (int)result.UserId);
+                    //TBoard aBoard = new TBoard(result.BoardId, result.BoardName, (int)result.UserId);
+                    Board aBoard = new Board(result.BoardId, result.BoardName, (int)result.UserId);
                     BoardArea.TabPages.Add(aBoard);
                     BoardArea.SelectedTab = aBoard;
                 }

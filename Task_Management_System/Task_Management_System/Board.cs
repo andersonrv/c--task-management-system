@@ -16,21 +16,15 @@ namespace Task_Management_System
         private int UserId;
         private int BoardId;
 
-        public Board(string Name, int UserId)
+        public Board(int BoardId, string Name, int UserId)
         {
-            this.BoardName = Name;
-            this.UserId = UserId;
-            Text = Name;
-            Controls.Add(new BoardContent());
-        }
 
-        public Board(string Name, int UserId, int BoardId)
-        {
+            this.BoardId = BoardId;
             this.BoardName = Name;
             this.UserId = UserId;
-            this.BoardId = BoardId;
+
             Text = Name;
-            Controls.Add(new BoardContent());
+            Controls.Add(new BoardContent(this.BoardId));
         }
     }
 }

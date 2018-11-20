@@ -27,7 +27,8 @@ namespace Task_Management_System
             var lists = LinqToSQLCRUD.ReadLists(BoarId);
             foreach (var list in lists)
             {
-                TList listUserControl = new TList(list.ListId, list.ListName, (int)list.BoardId);
+                //TList listUserControl = new TList(list.ListId, list.ListName, (int)list.BoardId);
+                List listUserControl = new List(list.ListId, list.ListName, (int)list.BoardId);
                 ListArea.Controls.Add(listUserControl);
             }
         }
@@ -55,7 +56,8 @@ namespace Task_Management_System
 
                 foreach (var result in lastList)
                 {
-                    TList aList = new TList(result.ListId, result.ListName, (int)result.BoardId);
+                    //TList aList = new TList(result.ListId, result.ListName, (int)result.BoardId);
+                    List aList = new List(result.ListId, result.ListName, (int)result.BoardId);
                     aList.BackColor = Color.FromArgb(rgb.Next(minValue, maxValue), rgb.Next(minValue, maxValue), rgb.Next(minValue, maxValue));
                     ListArea.Controls.Add(aList);
                 }

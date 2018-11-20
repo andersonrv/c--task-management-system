@@ -12,11 +12,18 @@ namespace Task_Management_System
 {
     public partial class Task : Form
     {
+        int TasktId;
+        string TaskName;
+        string TaskDescription;
+        DateTime TaskDue;
+        int TaskWho;
+        int TaskStatus;
+        int TaskList;
+
+
         //hardcoded responsibles and status, move to DB in the future
         public string[] responsibles = { "Anderson", "John Louis", "Parvir" };
         public string[] status = { "Ongoing", "Completed", "Obstructed" };
-
-
 
         public Task(string task)
         {
@@ -24,91 +31,27 @@ namespace Task_Management_System
             TaskNameLabel.Text = task;
             WhoBox.DataSource = responsibles;
             StatusBox.DataSource = status;
-            
+
         }
 
-        //protected LinkLabel _taskLink;
-        //public LinkLabel TaskLink
-        //{
-        //    get { return _taskLink; }
-        //    set
-        //    {
-        //        string taskName;
-        //        string taskMarker = "\u21DB ";
-        //        Font taskFont = new Font("Arial", 9);
-        //        Color taskLinkColor = Color.Black;
-        //        Color taskActiveLinkColor = Color.Green;
-        //        Size taskLabelSize = new Size(155, 0);
-        //        bool taskAutoSize = true;
-
-        //        Text = taskMarker + taskName + "\n";
-        //        Font = taskFont;
-        //        MaximumSize = taskLabelSize;
-        //        AutoSize = taskAutoSize;
-        //        LinkLabel.LinkColor = taskLinkColor;
-        //        ActiveLinkColor = taskActiveLinkColor;
-        //        Click += Task_Click;
-        //    }
-        //}
-
-        protected int _taskID;
-        public int TaskID
+        public Task(int taskId, string taskName, int listId)
         {
-            get { return _taskID; }
-            set
-            {
-                _taskID = value;
-            }    
+            InitializeComponent();
+            TaskNameLabel.Text = taskName;
+            WhoBox.DataSource = responsibles;
+            StatusBox.DataSource = status;
+
         }
 
-        protected string _taskName;
-        public string TaskName
+        public Task(int TaskId, string TaskName, string TaskDescription, DateTime TaskDue, int TaskWho, int TaskStatus, int TaskListId)
         {
-            get { return _taskName; }
-            set
-            {
-                _taskName = TaskNameLabel.Text;
-            }
-        }
-
-        protected string _taskDescription;
-        public string TaskDescription
-        {
-            get { return _taskDescription; }
-            set
-            {
-                _taskDescription = TextBoxDescription.Text;
-            }
-        }
-
-        protected DateTime _taskDue;
-        public DateTime TaskDue
-        {
-            get { return _taskDue; }
-            set
-            {
-                _taskDue = DueTimePicker.Value;
-            }
-        }
-        
-        protected string _responsible;
-        public string Responsible
-        {
-            get { return _responsible; }
-            set
-            {
-                _responsible = WhoBox.Text;
-            }
-        }
-
-        protected string _status;
-        public string Status
-        {
-            get { return _status; }
-            set
-            {
-                _status = StatusBox.Text;
-            }
+            this.TasktId = TaskId; // FIX PROPERTY TYPO LATER... 
+            this.TaskName = TaskName;
+            this.TaskDescription = TaskDescription;
+            this.TaskDue = TaskDue;
+            this.TaskWho = TaskWho;
+            this.TaskStatus = TaskStatus;
+            this.TaskList = TaskListId;
         }
 
         private void SaveChangesButton_Click(object sender, EventArgs e)

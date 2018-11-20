@@ -13,7 +13,7 @@ namespace Task_Management_System
         {
             
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-
+            
             //Look for user in the DB
 
             TUser user = db.TUsers.FirstOrDefault(u => u.UserName.Equals(UserName));
