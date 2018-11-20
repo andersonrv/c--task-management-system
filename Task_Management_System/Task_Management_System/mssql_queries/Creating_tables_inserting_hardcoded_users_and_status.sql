@@ -34,7 +34,7 @@ CREATE TABLE [TBoardAccess] (
 );
 
 CREATE TABLE [TLists] (
-  [ListId] int IDENTITY(1,1),
+  [ListId] int IDENTITY(100,1),
   [ListName] nvarchar(80),
   [BoardId] int FOREIGN KEY REFERENCES [TBoards]([BoardId]),
   PRIMARY KEY ([ListId])
@@ -51,7 +51,7 @@ CREATE TABLE [TTasks] (
   [TaskName] nvarchar(80),
   [TaskDescription] nvarchar(2000),
   [TaskDue] datetime2,
-  [TaskWho] int	FOREIGN KEY REFERENCES [TBoards]([BoardId]),
+  [TaskWho] int	FOREIGN KEY REFERENCES [TUsers]([UserId]),
   [TaskStatus] int FOREIGN KEY REFERENCES [TStatus]([StatusId]),
   [TaskList] int FOREIGN KEY REFERENCES [TLists]([ListId]),
   PRIMARY KEY ([TasktId])

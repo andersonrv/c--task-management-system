@@ -15,11 +15,32 @@ namespace Task_Management_System
     {
         int TasktId;
         string TaskName;
-        string TaskDescription;
-        DateTime TaskDue;
-        int TaskWho;
-        int TaskStatus;
+        //string TaskDescription;
+        //DateTime TaskDue;
+        //int TaskWho;
+        //int TaskStatus;
         int TaskList;
+
+        public Task(int taskId, string taskName, int listId)
+        {
+            InitializeComponent();
+            TasktId = taskId;
+            TaskName = taskName;
+            TaskList = listId;
+
+            TaskNameLabel.Text = taskName;
+
+            var users = PopulateUserList();
+            WhoBox.DataSource = new BindingSource(users, null);
+            WhoBox.DisplayMember = "Value";
+            WhoBox.ValueMember = "Key";
+
+            var status = PopulateStatusList();
+            StatusBox.DataSource = new BindingSource(status, null);
+            StatusBox.DisplayMember = "Value";
+            StatusBox.ValueMember = "Key";
+
+        }
 
         public Task(int taskId, string taskName, string taskDescription, DateTime taskDue, int taskWho, int taskStatus, int listId)
         {
@@ -59,14 +80,38 @@ namespace Task_Management_System
             KeyValuePair<int, string> selectedStatus = (KeyValuePair<int, string>)StatusBox.SelectedItem;
             int status = selectedStatus.Key;
 
-            LinqToSQLCRUD.UpdateTask(id, what, when, who, status);
+            try
+            {
+                LinqToSQLCRUD.UpdateTask(id, what, when, who, status);
+                MessageBox.Show("Task was updated.", "SUCCESS!");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Something went wrong. Your changes were not saved.");
+            }
+
 
             // ADD A MESSAGE TO LET THE USER KNOW THAT THE UPDATE WAS SUCCESSFUL!!!
         }
 
         private void DeleteTaskButton_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Do you really want to delete the current task? \rThis action is not reversible.", "DELETE TASK!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LinqToSQLCRUD.DeleteTask(TasktId);
+                // I HAVE TO UPDATE THE LIST WITH THE TASKS AND REMOVE IT FROM THERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                // BindingSource.ResetBindings 
+                // Use a delegate on the parent and call it from the child.
+                // Create an event in the parent and call the event from the child.
+                Dispose();
+                
 
+            }
+            else
+            {
+                Debug.WriteLine(this.Parent);
+            }
         }
 
         private Dictionary<int, string> PopulateUserList()

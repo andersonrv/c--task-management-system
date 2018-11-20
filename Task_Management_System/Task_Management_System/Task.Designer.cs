@@ -127,24 +127,28 @@
             // 
             // SaveChangesButton
             // 
+            this.SaveChangesButton.BackColor = System.Drawing.Color.DarkGreen;
             this.SaveChangesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SaveChangesButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.SaveChangesButton.Location = new System.Drawing.Point(412, 260);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(196, 43);
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save Changes";
-            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.UseVisualStyleBackColor = false;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // DeleteTaskButton
             // 
+            this.DeleteTaskButton.BackColor = System.Drawing.Color.Maroon;
             this.DeleteTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DeleteTaskButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.DeleteTaskButton.Location = new System.Drawing.Point(412, 312);
             this.DeleteTaskButton.Name = "DeleteTaskButton";
             this.DeleteTaskButton.Size = new System.Drawing.Size(196, 43);
             this.DeleteTaskButton.TabIndex = 5;
             this.DeleteTaskButton.Text = "Delete Task";
-            this.DeleteTaskButton.UseVisualStyleBackColor = true;
+            this.DeleteTaskButton.UseVisualStyleBackColor = false;
             this.DeleteTaskButton.Click += new System.EventHandler(this.DeleteTaskButton_Click);
             // 
             // Task

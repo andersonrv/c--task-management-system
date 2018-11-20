@@ -27,7 +27,7 @@ namespace Task_Management_System
         int maxValue = 200;
 
 
-        List<Task> ListOfTask = new List<Task>();
+        //List<Task> ListOfTask = new List<Task>();
 
         public List(int listId, string listName, int boardId)
         {
@@ -116,10 +116,19 @@ namespace Task_Management_System
         private void ViewTask_Click(object sender, EventArgs e, int taskId)
         {
             var result = LinqToSQLCRUD.GetTaskById(taskId);
+
             foreach (var item in result)
             {
-                Task task = new Task(item.TasktId, item.TaskName, item.TaskDescription, (DateTime)item.TaskDue, (int)item.TaskWho, (int)item.TaskStatus, (int)item.TaskList);
-                task.ShowDialog();
+                if (item.TaskDescription is null) // when task was created or not modified
+                {
+                    Task task = new Task(item.TasktId, item.TaskName, (int)item.TaskList);
+                    task.ShowDialog();
+                }
+                else // once task was already created and updated
+                {
+                    Task task = new Task(item.TasktId, item.TaskName, item.TaskDescription, (DateTime)item.TaskDue, (int)item.TaskWho, (int)item.TaskStatus, (int)item.TaskList);
+                    task.ShowDialog();
+                }
             }
         }
 
@@ -134,6 +143,7 @@ namespace Task_Management_System
 
                 // Destroy component in the ListArea
                 this.Dispose();
+
             }
         }
 
