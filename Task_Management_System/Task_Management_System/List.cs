@@ -15,6 +15,8 @@ namespace Task_Management_System
     {
         //LinkLabel taskLabel;
         int ListId;
+
+        //Tasks param setup
         string taskName;
         string taskMarker = "\u21DB ";
         Font taskFont = new Font("Arial", 8);
@@ -44,7 +46,7 @@ namespace Task_Management_System
                 taskLink.Font = taskFont;
                 taskLink.LinkColor = taskLinkColor;
                 taskLink.ActiveLinkColor = taskActiveLinkColor;
-                taskLink.Click += Task_Click;
+                taskLink.Click += (mySender, myEventArgs) => ViewTask_Click(mySender, myEventArgs, (int)taskLink.Tag);
 
                 taskPanel.Controls.Add(taskLink);
             }
@@ -65,7 +67,7 @@ namespace Task_Management_System
                 taskLink.Font = taskFont;
                 taskLink.LinkColor = taskLinkColor;
                 taskLink.ActiveLinkColor = taskActiveLinkColor;
-                taskLink.Click += Task_Click;
+                taskLink.Click += (mySender, myEventArgs) => ViewTask_Click(mySender, myEventArgs, (int)taskLink.Tag);
 
                 taskPanel.Controls.Add(taskLink);
             }
@@ -80,18 +82,23 @@ namespace Task_Management_System
                 //Add Task to DB
                 LinqToSQLCRUD.CreateTask(taskName, this.ListId);
 
+                //Reading the record on DB to display on FlowLayoutPanel
                 var lastTask = LinqToSQLCRUD.GetLastTaskInserted();
 
                 foreach (var result in lastTask)
                 {
+                    //Task aTask = new Task(result.TasktId, result.TaskName, (int)result.TaskList);
+                    //ListOfTask.Add(aTask);
+
                     LinkLabel taskLink = new LinkLabel();
                     taskLink.Text = taskMarker + result.TaskName + "\n"; //task.TaskName;
                     taskLink.Tag = result.TasktId;
                     taskLink.Font = taskFont;
                     taskLink.LinkColor = taskLinkColor;
                     taskLink.ActiveLinkColor = taskActiveLinkColor;
-                    //taskLink.Click += Task_Click;
-                    //taskLink.Click += Task_Click;
+                    
+                    // passing taskId to build up its view on the function ViewTask_Click
+                    taskLink.Click += (mySender, myEventArgs) => ViewTask_Click(mySender, myEventArgs, (int)taskLink.Tag);
                     taskPanel.Controls.Add(taskLink);
                     Debug.WriteLine(taskLink.Tag);
                 }
@@ -106,14 +113,14 @@ namespace Task_Management_System
 
         }
 
-
-        private void Task_Click(object sender, EventArgs e)
+        private void ViewTask_Click(object sender, EventArgs e, int taskId)
         {
-            // I Need to pass taskId to this function so I can run the query and display the info!!!!
-            LinqToSQLCRUD.GetTaskById(5);
-            Task task = new Task(taskName);
-
-            task.ShowDialog();
+            var result = LinqToSQLCRUD.GetTaskById(taskId);
+            foreach (var item in result)
+            {
+                Task task = new Task(item.TasktId, item.TaskName, (int)item.TaskList);
+                task.ShowDialog();
+            }
         }
 
         private void DeleteListButton_Click(object sender, EventArgs e)

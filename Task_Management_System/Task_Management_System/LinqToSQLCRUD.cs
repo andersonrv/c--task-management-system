@@ -290,5 +290,25 @@ namespace Task_Management_System
             }
         }
 
+        public static IEnumerable<TUser> GetUsers()
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TUser>(@"SELECT *
+                                                FROM TUsers");
+
+            return query;
+        }
+
+        public static IEnumerable<TStatus> GetStatus()
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+
+            var query = db.ExecuteQuery<TStatus>(@"SELECT *
+                                                FROM TStatus");
+
+            return query;
+        }
+
     }
 }
