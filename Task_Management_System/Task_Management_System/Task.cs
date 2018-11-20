@@ -63,9 +63,15 @@ namespace Task_Management_System
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
+            var id = this.TasktId;
+            string what = TextBoxDescription.Text;
+            DateTime when = DueTimePicker.Value;
+            KeyValuePair<int, string> selectedWho = (KeyValuePair<int, string>)WhoBox.SelectedItem;
+            int who = selectedWho.Key;
+            KeyValuePair<int, string> selectedStatus = (KeyValuePair<int, string>)StatusBox.SelectedItem;
+            int status = selectedStatus.Key;
 
-            var props = this.TasktId;
-            Debug.WriteLine(props);
+            LinqToSQLCRUD.UpdateTask(id, what, when, who, status);
         }
 
         private void DeleteTaskButton_Click(object sender, EventArgs e)
