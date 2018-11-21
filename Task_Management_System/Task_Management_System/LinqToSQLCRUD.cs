@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task_Management_System
 {
-    class LinqToSQLCRUD
+    partial class LinqToSQLCRUD
     {
         public static int LoginUser(string UserName, string Pass)
         {

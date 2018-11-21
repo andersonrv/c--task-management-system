@@ -21,6 +21,8 @@ namespace Task_Management_System
         //int TaskStatus;
         int TaskList;
 
+        public event Action DestroyIt;
+
         public Task(int taskId, string taskName, int listId)
         {
             InitializeComponent();
@@ -104,9 +106,9 @@ namespace Task_Management_System
                 // BindingSource.ResetBindings 
                 // Use a delegate on the parent and call it from the child.
                 // Create an event in the parent and call the event from the child.
+                DestroyIt();
                 Dispose();
-                
-
+               
             }
             else
             {

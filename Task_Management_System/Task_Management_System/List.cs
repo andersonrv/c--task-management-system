@@ -122,11 +122,13 @@ namespace Task_Management_System
                 if (item.TaskDescription is null) // when task was created or not modified
                 {
                     Task task = new Task(item.TasktId, item.TaskName, (int)item.TaskList);
+                    task.DestroyIt += () => Refresh(this.ListId); // it updates the list once a task is delete it
                     task.ShowDialog();
                 }
                 else // once task was already created and updated
                 {
                     Task task = new Task(item.TasktId, item.TaskName, item.TaskDescription, (DateTime)item.TaskDue, (int)item.TaskWho, (int)item.TaskStatus, (int)item.TaskList);
+                    task.DestroyIt += () => Refresh(this.ListId);
                     task.ShowDialog();
                 }
             }
@@ -147,5 +149,28 @@ namespace Task_Management_System
             }
         }
 
+
+        private void Refresh(int listId) {
+
+
+            var tasks = LinqToSQLCRUD.ReadTasks(listId);
+
+            taskPanel.Controls.Clear();
+
+            foreach (var task in tasks)
+            {
+                LinkLabel taskLink = new LinkLabel();
+                taskLink.Text = taskMarker + task.TaskName + "\n"; //task.TaskName;
+                taskLink.Tag = task.TasktId;
+                taskLink.Font = taskFont;
+                taskLink.LinkColor = taskLinkColor;
+                taskLink.ActiveLinkColor = taskActiveLinkColor;
+                taskLink.Click += (mySender, myEventArgs) => ViewTask_Click(mySender, myEventArgs, (int)taskLink.Tag);
+
+                
+
+                taskPanel.Controls.Add(taskLink);
+            }
+        }
     }
 }
