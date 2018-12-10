@@ -36,7 +36,7 @@ CREATE TABLE [TBoardAccess] (
 CREATE TABLE [TLists] (
   [ListId] int IDENTITY(100,1),
   [ListName] nvarchar(80),
-  [BoardId] int FOREIGN KEY REFERENCES [TBoards]([BoardId]),
+  [BoardId] int FOREIGN KEY REFERENCES [TBoards]([BoardId]) ON DELETE CASCADE,
   PRIMARY KEY ([ListId])
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE [TTasks] (
   [TaskDue] datetime2,
   [TaskWho] int	FOREIGN KEY REFERENCES [TUsers]([UserId]),
   [TaskStatus] int FOREIGN KEY REFERENCES [TStatus]([StatusId]),
-  [TaskList] int FOREIGN KEY REFERENCES [TLists]([ListId]),
+  [TaskList] int FOREIGN KEY REFERENCES [TLists]([ListId]) ON DELETE CASCADE,
   PRIMARY KEY ([TasktId])
 );
 
