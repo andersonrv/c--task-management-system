@@ -36,7 +36,6 @@
             this.WhoLabel = new System.Windows.Forms.Label();
             this.StatusBox = new System.Windows.Forms.ComboBox();
             this.StatusLabel = new System.Windows.Forms.Label();
-            this.LogLabel = new System.Windows.Forms.Label();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.DeleteTaskButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -116,15 +115,6 @@
             this.StatusLabel.TabIndex = 10;
             this.StatusLabel.Text = "Status:";
             // 
-            // LogLabel
-            // 
-            this.LogLabel.AutoSize = true;
-            this.LogLabel.Location = new System.Drawing.Point(26, 379);
-            this.LogLabel.Name = "LogLabel";
-            this.LogLabel.Size = new System.Drawing.Size(492, 20);
-            this.LogLabel.TabIndex = 6;
-            this.LogLabel.Text = "Think about how we are going to keep the log with all changes here...";
-            // 
             // SaveChangesButton
             // 
             this.SaveChangesButton.BackColor = System.Drawing.Color.DarkGreen;
@@ -155,10 +145,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 474);
+            this.ClientSize = new System.Drawing.Size(632, 390);
             this.Controls.Add(this.DeleteTaskButton);
             this.Controls.Add(this.SaveChangesButton);
-            this.Controls.Add(this.LogLabel);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.WhoLabel);
@@ -186,7 +175,6 @@
         private System.Windows.Forms.Label WhoLabel;
         private System.Windows.Forms.ComboBox StatusBox;
         private System.Windows.Forms.Label StatusLabel;
-        private System.Windows.Forms.Label LogLabel;
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Button DeleteTaskButton;
     }
