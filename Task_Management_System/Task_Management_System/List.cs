@@ -97,7 +97,6 @@ namespace Task_Management_System
                     // passing taskId to build up its view on the function ViewTask_Click
                     taskLink.Click += (mySender, myEventArgs) => ViewTask_Click(mySender, myEventArgs, (int)taskLink.Tag);
                     taskPanel.Controls.Add(taskLink);
-                    Debug.WriteLine(taskLink.Tag);
                 }
 
                 taskInputBox.Text = "";

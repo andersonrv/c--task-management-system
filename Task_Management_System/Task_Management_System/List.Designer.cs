@@ -66,6 +66,7 @@
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(214, 360);
             this.taskPanel.TabIndex = 2;
+            this.taskPanel.WrapContents = false;
             // 
             // taskInputBox
             // 
