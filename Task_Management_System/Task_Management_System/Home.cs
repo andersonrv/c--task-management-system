@@ -24,7 +24,6 @@ namespace Task_Management_System
             var boards = LinqToSQLCRUD.ReadBoards(userId);
             foreach (var board in boards)
             {
-                //TBoard tab = new TBoard(board.BoardId, board.BoardName, board.BoardId);
                 Board tab = new Board(board.BoardId, board.BoardName, board.BoardId);
                 BoardArea.TabPages.Add(tab);
                 
@@ -49,7 +48,6 @@ namespace Task_Management_System
                 
                 foreach (var result in lastBoard)
                 {
-                    //TBoard aBoard = new TBoard(result.BoardId, result.BoardName, (int)result.UserId);
                     Board aBoard = new Board(result.BoardId, result.BoardName, (int)result.UserId);
                     BoardArea.TabPages.Add(aBoard);
                     BoardArea.SelectedTab = aBoard;
@@ -59,14 +57,13 @@ namespace Task_Management_System
                 
             }
         }
-        // IT NEEDS TO IMPLEMENT DELETE ON CASCADE!!!!!!!!!!!!!!!! WHEN DELETING A BOARD, ITS TASKS STILL REMAIN IN THE DATABASE!!!!
+
         private void DeleteBoard_Click(object sender, EventArgs e)
         {
             if (BoardArea.TabCount > 0)
             {
                 if(MessageBox.Show("Do you really want to delete the current board? \rThis action is not reversible.", "DELETE BOARD!" , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // Using reflection to retrieve the number of the board to delete it from the database.
                     int boardIdToBeDeleted = (int)BoardArea.SelectedTab.GetType().GetProperty("BoardId").GetValue(BoardArea.SelectedTab, null);
                     LinqToSQLCRUD.DeleteBoard(boardIdToBeDeleted);
                     BoardArea.TabPages.Remove(BoardArea.SelectedTab);

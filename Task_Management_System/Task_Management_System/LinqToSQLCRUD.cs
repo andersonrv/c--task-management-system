@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task_Management_System
 {
+    // Data Layer
     partial class LinqToSQLCRUD
     {
         public static int LoginUser(string UserName, string Pass)
@@ -82,8 +83,6 @@ namespace Task_Management_System
                 Console.WriteLine(e);
             }
         }
-        
-        // DELETEBOARD NEEDS TO DELETE LISTS ON CASCADE AND ITS TASKS
 
         public static void DeleteBoard(int BoardId)
         {
@@ -106,8 +105,6 @@ namespace Task_Management_System
                 Console.WriteLine(e);
             }
         }
-
-        // Work on update BoardName in the future.
 
         public static IEnumerable<TList> ReadLists(int boardId)
         {
@@ -158,8 +155,6 @@ namespace Task_Management_System
             }
         }
 
-        // DELETELISTS NEEDS TO DELETE TASKS ON CASCADE
-
         public static void DeleteList(int ListId)
         {
 
@@ -181,8 +176,6 @@ namespace Task_Management_System
                 Console.WriteLine(e);
             }
         }
-
-        // Work on edit ListName in the future.
 
         public static IEnumerable<TTask> ReadTasks(int listId)
         {
@@ -243,7 +236,7 @@ namespace Task_Management_System
                 Console.WriteLine(e);
             }
         }
-        // DELETELISTS NEEDS TO DELETE TASKS ON CASCADE
+
         public static void DeleteTask(int taskId)
         {
 

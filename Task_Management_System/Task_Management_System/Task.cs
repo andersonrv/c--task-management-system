@@ -15,10 +15,6 @@ namespace Task_Management_System
     {
         int TasktId;
         string TaskName;
-        //string TaskDescription;
-        //DateTime TaskDue;
-        //int TaskWho;
-        //int TaskStatus;
         int TaskList;
 
         public event Action DestroyIt;
@@ -92,9 +88,6 @@ namespace Task_Management_System
 
                 MessageBox.Show("Something went wrong. Your changes were not saved.");
             }
-
-
-            // ADD A MESSAGE TO LET THE USER KNOW THAT THE UPDATE WAS SUCCESSFUL!!!
         }
 
         private void DeleteTaskButton_Click(object sender, EventArgs e)
@@ -102,10 +95,6 @@ namespace Task_Management_System
             if (MessageBox.Show("Do you really want to delete the current task? \rThis action is not reversible.", "DELETE TASK!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 LinqToSQLCRUD.DeleteTask(TasktId);
-                // I HAVE TO UPDATE THE LIST WITH THE TASKS AND REMOVE IT FROM THERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                // BindingSource.ResetBindings 
-                // Use a delegate on the parent and call it from the child.
-                // Create an event in the parent and call the event from the child.
                 DestroyIt();
                 Dispose();
                

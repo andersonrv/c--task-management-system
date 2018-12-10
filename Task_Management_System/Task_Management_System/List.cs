@@ -41,7 +41,7 @@ namespace Task_Management_System
             foreach (var task in tasks)
             {
                 LinkLabel taskLink = new LinkLabel();
-                taskLink.Text = taskMarker + task.TaskName + "\n"; //task.TaskName;
+                taskLink.Text = taskMarker + task.TaskName + "\n";
                 taskLink.Tag = task.TasktId;
                 taskLink.Font = taskFont;
                 taskLink.LinkColor = taskLinkColor;
@@ -62,7 +62,7 @@ namespace Task_Management_System
             foreach (var task in tasks)
             {
                 LinkLabel taskLink = new LinkLabel();
-                taskLink.Text = taskMarker + task.TaskName + "\n"; //task.TaskName;
+                taskLink.Text = taskMarker + task.TaskName + "\n";
                 taskLink.Tag = task.TasktId;
                 taskLink.Font = taskFont;
                 taskLink.LinkColor = taskLinkColor;
@@ -87,9 +87,6 @@ namespace Task_Management_System
 
                 foreach (var result in lastTask)
                 {
-                    //Task aTask = new Task(result.TasktId, result.TaskName, (int)result.TaskList);
-                    //ListOfTask.Add(aTask);
-
                     LinkLabel taskLink = new LinkLabel();
                     taskLink.Text = taskMarker + result.TaskName + "\n"; //task.TaskName;
                     taskLink.Tag = result.TasktId;
@@ -138,21 +135,16 @@ namespace Task_Management_System
         {
             if (MessageBox.Show("Do you really want to delete list '" + ListNameLabel.Text + "'? \rThis action is not reversible.", "DELETE BOARD!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                // Remove from DB
-                //string propName = "ListId";
-                
-                int listIdToBeDeleted = (ListId);//(int)this.GetType().GetProperty(propName).GetValue(this, null);
+                int listIdToBeDeleted = (ListId);
                 LinqToSQLCRUD.DeleteList(listIdToBeDeleted);
 
                 // Destroy component in the ListArea
                 this.Dispose();
-
             }
         }
 
 
         private void Refresh(int listId) {
-
 
             var tasks = LinqToSQLCRUD.ReadTasks(listId);
 
