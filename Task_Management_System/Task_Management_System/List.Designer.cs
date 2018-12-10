@@ -48,7 +48,7 @@
             // 
             // addTaskButton
             // 
-            this.addTaskButton.Location = new System.Drawing.Point(15, 105);
+            this.addTaskButton.Location = new System.Drawing.Point(15, 112);
             this.addTaskButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskButton.Name = "addTaskButton";
             this.addTaskButton.Size = new System.Drawing.Size(214, 38);
@@ -75,9 +75,10 @@
             this.taskInputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskInputBox.Name = "taskInputBox";
             this.taskInputBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.taskInputBox.Size = new System.Drawing.Size(212, 42);
+            this.taskInputBox.Size = new System.Drawing.Size(212, 50);
             this.taskInputBox.TabIndex = 0;
             this.taskInputBox.Text = "";
+            this.taskInputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.taskInputBox_KeyDown);
             // 
             // DeleteListButton
             // 

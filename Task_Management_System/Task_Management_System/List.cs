@@ -164,5 +164,13 @@ namespace Task_Management_System
                 taskPanel.Controls.Add(taskLink);
             }
         }
+
+        private void taskInputBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddTask_Click(this, new EventArgs());
+            }
+        }
     }
 }

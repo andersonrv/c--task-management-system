@@ -63,5 +63,13 @@ namespace Task_Management_System
                 ListNameTextBox.Clear();
             }
         }
+
+        private void ListNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddList_Click(this, new EventArgs());
+            }
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.ListNameTextBox.Name = "ListNameTextBox";
             this.ListNameTextBox.Size = new System.Drawing.Size(459, 39);
             this.ListNameTextBox.TabIndex = 0;
+            this.ListNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListNameTextBox_KeyDown);
             // 
             // BoardContent
             // 

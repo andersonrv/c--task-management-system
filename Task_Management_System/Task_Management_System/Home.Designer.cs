@@ -75,6 +75,7 @@
             this.BoardNameTextBox.Name = "BoardNameTextBox";
             this.BoardNameTextBox.Size = new System.Drawing.Size(459, 39);
             this.BoardNameTextBox.TabIndex = 0;
+            this.BoardNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BoardNameTextBox_KeyDown);
             // 
             // Home
             // 

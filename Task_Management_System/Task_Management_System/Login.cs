@@ -45,5 +45,13 @@ namespace Task_Management_System
             
 
         }
+
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton_Click(this, new EventArgs());
+            }
+        }
     }
 }

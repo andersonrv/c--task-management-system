@@ -76,6 +76,12 @@ namespace Task_Management_System
 
         }
 
-
+        private void BoardNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddBoard_Click(this, new EventArgs());
+            }
+        }
     }
 }
