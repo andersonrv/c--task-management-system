@@ -68,6 +68,8 @@ namespace Task_Management_System
                 {
                     // Remove from DB
                     string propName = "BoardId";
+                    // FIX HEEEEEEEEEEEEEEEEEEEEEEEEEEERE!!!
+                    //Debug.WriteLine(BoardArea.SelectedTab.GetType().GetProperty("BoardId").GetValue(BoardArea.SelectedTab));
                     int boardIdToBeDeleted = (int)BoardArea.SelectedTab.GetType().GetProperty(propName).GetValue(BoardArea.SelectedTab, null);
                     LinqToSQLCRUD.DeleteBoard(boardIdToBeDeleted);
                 

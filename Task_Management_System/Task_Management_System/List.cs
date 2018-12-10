@@ -139,8 +139,9 @@ namespace Task_Management_System
             if (MessageBox.Show("Do you really want to delete list '" + ListNameLabel.Text + "'? \rThis action is not reversible.", "DELETE BOARD!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 // Remove from DB
-                string propName = "ListId";
-                int listIdToBeDeleted = (int)this.GetType().GetProperty(propName).GetValue(this, null);
+                //string propName = "ListId";
+                
+                int listIdToBeDeleted = (ListId);//(int)this.GetType().GetProperty(propName).GetValue(this, null);
                 LinqToSQLCRUD.DeleteList(listIdToBeDeleted);
 
                 // Destroy component in the ListArea
