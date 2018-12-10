@@ -66,16 +66,9 @@ namespace Task_Management_System
             {
                 if(MessageBox.Show("Do you really want to delete the current board? \rThis action is not reversible.", "DELETE BOARD!" , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // Remove from DB
-                    string propName = "BoardId";
-                    // FIX HEEEEEEEEEEEEEEEEEEEEEEEEEEERE!!!
-                    //Debug.WriteLine(BoardArea.SelectedTab.GetType().GetProperty("BoardId").GetValue(BoardArea.SelectedTab));
-                    int boardIdToBeDeleted = (int)BoardArea.SelectedTab.GetType().GetProperty(propName).GetValue(BoardArea.SelectedTab, null);
+                    // Using reflection to retrieve the number of the board to delete it from the database.
+                    int boardIdToBeDeleted = (int)BoardArea.SelectedTab.GetType().GetProperty("BoardId").GetValue(BoardArea.SelectedTab, null);
                     LinqToSQLCRUD.DeleteBoard(boardIdToBeDeleted);
-                
-                    Debug.WriteLine(BoardArea.SelectedTab.GetType().GetProperty(propName).GetValue(BoardArea.SelectedTab, null));
-                
-                    // Remove from TabControl
                     BoardArea.TabPages.Remove(BoardArea.SelectedTab);
                 }
             }

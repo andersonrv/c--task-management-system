@@ -14,7 +14,7 @@ namespace Task_Management_System
     {
         private string BoardName;
         private int UserId;
-        private int BoardId;
+        public int BoardId { get; set; }
 
         public Board(int BoardId, string Name, int UserId)
         {

@@ -13,7 +13,7 @@ namespace Task_Management_System
 {
     public partial class BoardContent : UserControl
     {
-        protected int BoardId;
+        public int BoardId;
 
         public BoardContent()
         {
