@@ -39,18 +39,21 @@
             // 
             this.ListNameLabel.AutoSize = true;
             this.ListNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListNameLabel.Location = new System.Drawing.Point(13, 15);
+            this.ListNameLabel.Location = new System.Drawing.Point(20, 23);
+            this.ListNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListNameLabel.Name = "ListNameLabel";
-            this.ListNameLabel.Size = new System.Drawing.Size(38, 16);
+            this.ListNameLabel.Size = new System.Drawing.Size(58, 25);
             this.ListNameLabel.TabIndex = 3;
             this.ListNameLabel.Text = "List 1";
             // 
             // addTaskButton
             // 
             this.addTaskButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.addTaskButton.Location = new System.Drawing.Point(10, 73);
+            this.addTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTaskButton.Location = new System.Drawing.Point(15, 112);
+            this.addTaskButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addTaskButton.Name = "addTaskButton";
-            this.addTaskButton.Size = new System.Drawing.Size(143, 25);
+            this.addTaskButton.Size = new System.Drawing.Size(214, 38);
             this.addTaskButton.TabIndex = 1;
             this.addTaskButton.Text = "Add Task";
             this.addTaskButton.UseVisualStyleBackColor = false;
@@ -60,29 +63,34 @@
             // 
             this.taskPanel.AutoScroll = true;
             this.taskPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.taskPanel.Location = new System.Drawing.Point(10, 111);
+            this.taskPanel.Location = new System.Drawing.Point(15, 171);
+            this.taskPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskPanel.Name = "taskPanel";
-            this.taskPanel.Size = new System.Drawing.Size(143, 234);
+            this.taskPanel.Size = new System.Drawing.Size(214, 360);
             this.taskPanel.TabIndex = 2;
             this.taskPanel.WrapContents = false;
             // 
             // taskInputBox
             // 
             this.taskInputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskInputBox.Location = new System.Drawing.Point(10, 33);
+            this.taskInputBox.Location = new System.Drawing.Point(15, 51);
+            this.taskInputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.taskInputBox.Name = "taskInputBox";
             this.taskInputBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.taskInputBox.Size = new System.Drawing.Size(143, 34);
+            this.taskInputBox.Size = new System.Drawing.Size(212, 50);
             this.taskInputBox.TabIndex = 0;
             this.taskInputBox.Text = "";
             this.taskInputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.taskInputBox_KeyDown);
             // 
             // DeleteListButton
             // 
-            this.DeleteListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.DeleteListButton.Location = new System.Drawing.Point(10, 362);
+            this.DeleteListButton.BackColor = System.Drawing.Color.Maroon;
+            this.DeleteListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteListButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteListButton.Location = new System.Drawing.Point(15, 557);
+            this.DeleteListButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeleteListButton.Name = "DeleteListButton";
-            this.DeleteListButton.Size = new System.Drawing.Size(143, 25);
+            this.DeleteListButton.Size = new System.Drawing.Size(214, 38);
             this.DeleteListButton.TabIndex = 4;
             this.DeleteListButton.Text = "Delete List";
             this.DeleteListButton.UseVisualStyleBackColor = false;
@@ -90,7 +98,7 @@
             // 
             // List
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.DeleteListButton);
@@ -98,8 +106,9 @@
             this.Controls.Add(this.taskPanel);
             this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.ListNameLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "List";
-            this.Size = new System.Drawing.Size(166, 398);
+            this.Size = new System.Drawing.Size(249, 612);
             this.ResumeLayout(false);
             this.PerformLayout();
 
