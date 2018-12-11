@@ -43,75 +43,75 @@
             // TaskNameLabel
             // 
             this.TaskNameLabel.AutoSize = true;
-            this.TaskNameLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskNameLabel.Location = new System.Drawing.Point(20, 15);
-            this.TaskNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TaskNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskNameLabel.Location = new System.Drawing.Point(13, 10);
             this.TaskNameLabel.Name = "TaskNameLabel";
-            this.TaskNameLabel.Size = new System.Drawing.Size(57, 23);
+            this.TaskNameLabel.Size = new System.Drawing.Size(39, 16);
             this.TaskNameLabel.TabIndex = 7;
             this.TaskNameLabel.Text = "Task";
             // 
             // TextBoxDescription
             // 
-            this.TextBoxDescription.Location = new System.Drawing.Point(24, 51);
+            this.TextBoxDescription.Location = new System.Drawing.Point(16, 33);
+            this.TextBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxDescription.Name = "TextBoxDescription";
-            this.TextBoxDescription.Size = new System.Drawing.Size(584, 180);
+            this.TextBoxDescription.Size = new System.Drawing.Size(391, 118);
             this.TextBoxDescription.TabIndex = 0;
             this.TextBoxDescription.Text = "";
             // 
             // DueTimePicker
             // 
-            this.DueTimePicker.Location = new System.Drawing.Point(107, 260);
+            this.DueTimePicker.Location = new System.Drawing.Point(71, 169);
+            this.DueTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DueTimePicker.Name = "DueTimePicker";
-            this.DueTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.DueTimePicker.Size = new System.Drawing.Size(135, 20);
             this.DueTimePicker.TabIndex = 1;
             // 
             // DueLabel
             // 
             this.DueLabel.AutoSize = true;
-            this.DueLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DueLabel.Location = new System.Drawing.Point(22, 260);
-            this.DueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DueLabel.Location = new System.Drawing.Point(15, 169);
             this.DueLabel.Name = "DueLabel";
-            this.DueLabel.Size = new System.Drawing.Size(55, 23);
+            this.DueLabel.Size = new System.Drawing.Size(36, 16);
             this.DueLabel.TabIndex = 8;
             this.DueLabel.Text = "Due:";
             // 
             // WhoBox
             // 
             this.WhoBox.FormattingEnabled = true;
-            this.WhoBox.Location = new System.Drawing.Point(107, 293);
+            this.WhoBox.Location = new System.Drawing.Point(71, 190);
+            this.WhoBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WhoBox.Name = "WhoBox";
-            this.WhoBox.Size = new System.Drawing.Size(200, 28);
+            this.WhoBox.Size = new System.Drawing.Size(135, 21);
             this.WhoBox.TabIndex = 2;
             // 
             // WhoLabel
             // 
             this.WhoLabel.AutoSize = true;
-            this.WhoLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WhoLabel.Location = new System.Drawing.Point(22, 293);
-            this.WhoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.WhoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WhoLabel.Location = new System.Drawing.Point(15, 190);
             this.WhoLabel.Name = "WhoLabel";
-            this.WhoLabel.Size = new System.Drawing.Size(59, 23);
+            this.WhoLabel.Size = new System.Drawing.Size(39, 16);
             this.WhoLabel.TabIndex = 9;
             this.WhoLabel.Text = "Who:";
             // 
             // StatusBox
             // 
             this.StatusBox.FormattingEnabled = true;
-            this.StatusBox.Location = new System.Drawing.Point(107, 327);
+            this.StatusBox.Location = new System.Drawing.Point(71, 213);
+            this.StatusBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StatusBox.Name = "StatusBox";
-            this.StatusBox.Size = new System.Drawing.Size(200, 28);
+            this.StatusBox.Size = new System.Drawing.Size(135, 21);
             this.StatusBox.TabIndex = 3;
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel.Location = new System.Drawing.Point(22, 327);
-            this.StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.Location = new System.Drawing.Point(15, 213);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(78, 23);
+            this.StatusLabel.Size = new System.Drawing.Size(48, 16);
             this.StatusLabel.TabIndex = 10;
             this.StatusLabel.Text = "Status:";
             // 
@@ -120,9 +120,10 @@
             this.SaveChangesButton.BackColor = System.Drawing.Color.DarkGreen;
             this.SaveChangesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.SaveChangesButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SaveChangesButton.Location = new System.Drawing.Point(412, 260);
+            this.SaveChangesButton.Location = new System.Drawing.Point(275, 169);
+            this.SaveChangesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(196, 43);
+            this.SaveChangesButton.Size = new System.Drawing.Size(131, 28);
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = false;
@@ -133,9 +134,10 @@
             this.DeleteTaskButton.BackColor = System.Drawing.Color.Maroon;
             this.DeleteTaskButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DeleteTaskButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DeleteTaskButton.Location = new System.Drawing.Point(412, 312);
+            this.DeleteTaskButton.Location = new System.Drawing.Point(275, 203);
+            this.DeleteTaskButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteTaskButton.Name = "DeleteTaskButton";
-            this.DeleteTaskButton.Size = new System.Drawing.Size(196, 43);
+            this.DeleteTaskButton.Size = new System.Drawing.Size(131, 28);
             this.DeleteTaskButton.TabIndex = 5;
             this.DeleteTaskButton.Text = "Delete Task";
             this.DeleteTaskButton.UseVisualStyleBackColor = false;
@@ -143,9 +145,10 @@
             // 
             // Task
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 390);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(421, 253);
             this.Controls.Add(this.DeleteTaskButton);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.StatusLabel);
@@ -157,7 +160,6 @@
             this.Controls.Add(this.TextBoxDescription);
             this.Controls.Add(this.TaskNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Task";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
